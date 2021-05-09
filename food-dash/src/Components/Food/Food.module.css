@@ -1,0 +1,10 @@
+.food {
+  color: black;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  list-style-type: none;
+  width: 80%;
+  max-width: 75rem;
+  align-self: center;
+}

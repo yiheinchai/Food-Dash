@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(128, 39, 17);
+  color: white;
+}
+
+.header > *:first-child {
+  margin-left: 2rem;
+}
+.header > *:last-child {
+  margin-right: 2rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+}

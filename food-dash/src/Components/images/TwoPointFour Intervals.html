@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!-- saved from url=(0147)http://127.0.0.1:8080/pages/setTimer.html?permSetCount=3&permDistance=1000&permPaceTime=44958&permSetTimeMin=0&permSetTimeSec=0&permRestTimeSec=200 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#009578">
+    <title>TwoPointFour Intervals</title>
+    <link rel="stylesheet" href="./TwoPointFour Intervals_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./TwoPointFour Intervals_files/master.css">
+    <link rel="manifest" href="http://127.0.0.1:8080/manifest.json">
+    <link rel="apple-touch-icon" href="http://127.0.0.1:8080/images/icon_x128apple.png">
+    <link rel="icon" href="http://127.0.0.1:8080/images/icon_x48.png">
+    <link rel="serviceWorker" href="http://127.0.0.1:8080/sw.js">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link href="./TwoPointFour Intervals_files/css2" rel="stylesheet">
+    <script type="module" src="./TwoPointFour Intervals_files/bootstrap.min.js.download"></script>
+    <script type="module" src="./TwoPointFour Intervals_files/db.js.download"></script>
+    <script type="module" src="./TwoPointFour Intervals_files/index.js.download"></script>
+    <script type="module" src="./TwoPointFour Intervals_files/setTimer.js.download"></script>
+  </head>
+  <body class="vsc-initialized">
+    <div class="root">
+ <div class="container-fluid Logo">
+      <div class="row d-flex justify-content-start align-items-center navContainer">
+      <div class="col-lg-3">
+      <div class="row d-flex align-items-center mb-3">
+          <div class="col-6">
+          <span><svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.0002 29C12.8335 29 9.15016 26.8667 7.00016 23.6667C7.05016 20.3333 13.6668 18.5 17.0002 18.5C20.3335 18.5 26.9502 20.3333 27.0002 23.6667C24.8502 26.8667 21.1668 29 17.0002 29ZM17.0002 5.33333C18.3262 5.33333 19.598 5.86012 20.5357 6.7978C21.4734 7.73548 22.0002 9.00725 22.0002 10.3333C22.0002 11.6594 21.4734 12.9312 20.5357 13.8689C19.598 14.8066 18.3262 15.3333 17.0002 15.3333C15.6741 15.3333 14.4023 14.8066 13.4646 13.8689C12.5269 12.9312 12.0002 11.6594 12.0002 10.3333C12.0002 9.00725 12.5269 7.73548 13.4646 6.7978C14.4023 5.86012 15.6741 5.33333 17.0002 5.33333ZM17.0002 0.333334C14.8115 0.333334 12.6442 0.76443 10.6221 1.60201C8.60001 2.43959 6.76269 3.66724 5.21505 5.21489C2.08944 8.34049 0.333496 12.5797 0.333496 17C0.333496 21.4203 2.08944 25.6595 5.21505 28.7851C6.76269 30.3328 8.60001 31.5604 10.6221 32.398C12.6442 33.2356 14.8115 33.6667 17.0002 33.6667C21.4204 33.6667 25.6597 31.9107 28.7853 28.7851C31.9109 25.6595 33.6668 21.4203 33.6668 17C33.6668 7.78333 26.1668 0.333334 17.0002 0.333334Z" fill="#9EA9B8"></path>
+          </svg>
+          </span>
+              Yi Hein
+          </div>
+          <div class="col-6">
+              <a role="button" href="http://127.0.0.1:8080/pages/login.html" class="btn btn-warning">Log out</a>
+          </div>
+      </div>
+  </div>
+        <div class="col head3">
+          <a class="navitem priceBtn" href="http://127.0.0.1:8080/pages/dashboard.html" role="button">Dashboard</a>
+        </div>
+        <div class="col head3">
+          <a class="navitem priceBtn" href="http://127.0.0.1:8080/pages/distanceTimer.html" role="button">Train</a>
+        </div>
+        <div class="col head3">
+          <a class="navitem techBtn" href="http://127.0.0.1:8080/pages/track.html" role="button">Track</a>
+        </div>
+        <div class="col head3">
+          <a class="navitem aboutBtn" href="http://127.0.0.1:8080/pages/suggest.html" role="button">Suggest</a>
+        </div>
+      </div>
+    </div>
+ 
+<div class="container-fluid DistanceTimer">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 timer pl-4 pr-4">
+          <div class="row d-flex align-items-center justify-content-center">
+            <div id="bigtime" class="secten col-2 display-1 timersec">2</div>
+            <div id="bigtime" class="secone col-2 display-1 timersec">7</div>
+            <div id="bigtime" class="col-2 display-1 timersec">:</div>
+            <div id="bigtime" class="milliten col-2 display-1 timersec">8</div>
+            <div id="bigtime" class="millione col-2 display-1 timersec">3</div>
+          </div>
+
+          <div class="row justify-content-center mb-4">
+            <div class="col-6 display-6 timermin resttime">Rest&nbsp;&nbsp;&nbsp;3:05</div>
+          </div>
+
+          <div class="row smallcard mb-3">
+            <div class="col-6 titlecard">Set</div>
+            <div class="col-6 valuecard currrep">1</div>
+          </div>
+          <div class="row smallcard">
+            <div class="col-6 titlecard">Distance</div>
+            <div class="col-6 valuecard currdist">0m</div>
+          </div>
+          <!-- User Control Buttons -->
+          <div class="row mb-2 mt-4">
+            <div class="col-4">
+              <button type="button" class="btn-lg btn btn-outline-success ctrlbtn timerstart disabled">
+                Start
+              </button>
+            </div>
+            <div class="col-4">
+              <button type="button" class="btn-lg btn btn-outline-danger ctrlbtn timersplit disabled">
+                Split
+              </button>
+            </div>
+            <div class="col-4">
+              <button type="button" class="btn-lg btn btn-outline-warning ctrlbtn timerpause">
+                Pause
+              </button>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-6">
+              <button type="button" class="audioactivate mt-4 btn btn-outline-info btmnav">
+                🔊 Enable Audio (iOS users)
+              </button>
+            </div>
+            <div class="col-6">
+            <a class="mt-4 btn btn-warning" data-bs-toggle="modal" href="http://127.0.0.1:8080/pages/setTimer.html?permSetCount=3&amp;permDistance=1000&amp;permPaceTime=44958&amp;permSetTimeMin=0&amp;permSetTimeSec=0&amp;permRestTimeSec=200#exampleModalToggle" role="button">Timer Tutorial</a>
+            </div>
+          </div>
+          <!-- END OF User Control Buttons-->
+
+          <!-- Live Training Records-->
+          <div class="row justify-content-start">
+            <div class="col-12 mt-5 h5">Current Training Timings</div>
+          </div>
+          <div class="row justify-content-center trainingDataTable">
+            <thread>
+                </thread><table class="table">
+              <tbody><tr>
+                  <th scope="col">Set</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Target</th>
+                </tr>
+              
+              </tbody><tbody class="timerecord">
+  <tr>
+    <th scope="row">1</th>
+    <td>00:03:10</td>
+    <td>No Target Set</td>
+  </tr></tbody>
+            </table>
+            <!-- END OF Live Training Records-->
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <a class="mt-4 saveTraining btn btn-warning" role="button">Save</a>
+            </div>
+            <div class="col-6">
+              <a class="mt-4 completeTraining btn btn-warning" role="button" href="http://127.0.0.1:8080/pages/track.html?">Complete Training</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <audio class="audioenable">
+        <source src="../callouts/audioenabled.mp3">
+      </audio>
+    </div>
+
+<div class="container interval__modal">
+      <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel">Guide to TwoPointFour Train | Timer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>
+              Welcome to your customised workout. This screen is a stopwatch timer that has been pre-programmed with your workout details. This timer is set to the pace that you need to run each 100m in the interval in. The time displayed on the screen is how long you have to run the next 100m of your workout. Click the various buttons to understand what each one does.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-warning" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel2">
+                Timer Controls Guide
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img class="modal-image" src="./TwoPointFour Intervals_files/timer_controls.jpg">
+              <h5>Start</h5>
+              <p>
+              Pressing this button starts the workout.
+              </p>
+              <h5>Split</h5>
+              <p>Press this button when you have completed the required distance for your set. Your time taken for the set will be recorded automatically. It will automatically start the rest countdown before the start of your next set.</p>
+              <h5>Pause</h5>
+              <p>Press this button to pause the entire workout.</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-warning" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">
+                Back
+              </button>
+              <button class="btn btn-warning" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" data-bs-dismiss="modal">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel3">
+                Timers Guide
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img class="modal-image" src="./TwoPointFour Intervals_files/timer_types.jpg">
+              <h5>Big Timer (in black)</h5>
+              <p>
+                This is a countdown timer. It shows you how much time you have left to run the current 100m, based on the seconds / 100m pace set out by your training plan.
+              </p>
+              <h5>Small Timer (in grey)</h5>
+              <p>
+                This is a countup timer. It records the time elapsed since the start of your current set. Pressing split will record the time elpased into the table below.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-warning" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
+                Back
+              </button>
+              <button class="btn btn-warning" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal" data-bs-dismiss="modal">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel4">
+                Timer HUD Guide
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img class="modal-image" src="./TwoPointFour Intervals_files/timer_hud.jpg">
+              <h5>Set Tracker </h5>
+              <p>
+                This shows you which set of your training you are currently on.
+              </p>
+              <h5>Distance Tracker</h5>
+              <p>
+                This showns you the distance which you should be at based on your targeted pace.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-warning" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" data-bs-dismiss="modal">
+                Back
+              </button>
+              <button class="btn btn-warning" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal" data-bs-dismiss="modal">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModalToggle5" aria-hidden="true" aria-labelledby="exampleModalToggleLabel5" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel5">Completing and Saving your Workout</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <img class="modal-image" src="./TwoPointFour Intervals_files/timer_complete.jpg">
+              <p>To complete your workout, scroll down and press the save button. Afterwhich, press the complete workout button. Always remember to press the save button first!
+            </p></div>
+            <div class="modal-footer">
+              <button class="btn btn-warning" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" data-bs-dismiss="modal">
+                Back
+              </button>
+              <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+</script>
+
+
+</body></html>

@@ -1,0 +1,23 @@
+.icon {
+  height: 1rem;
+  fill: white;
+}
+
+.cart__count {
+  background-color: rgb(128, 39, 17);
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+}
+
+.cart__wrapper {
+  padding: 0rem 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
+  align-items: center;
+}
+
+.cart__wrapper > * {
+  margin: 0.5rem;
+}

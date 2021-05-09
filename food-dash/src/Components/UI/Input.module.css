@@ -1,0 +1,7 @@
+.input {
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid rgb(189, 189, 189);
+  width: 1.5rem;
+  text-align: center;
+}
