@@ -1,20 +1,25 @@
 import styles from "./CartBtn.module.css";
 import CartList from "../Cart/CartList";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import CartContext from "../../store/cart-context";
 import Button from "../UI/Button";
 
 const CartBtn = () => {
+  const [cartToggle, setCartToggle] = useState(false);
   const cartContext = useContext(CartContext);
   const cartPopulation = cartContext.foodData.cartItems.reduce(
     (acc, ele) => (acc += ele.amount),
     0
   );
 
+  function toggleCartDisplay() {
+    setCartToggle((previousState) => !previousState);
+  }
+
   return (
     <>
-      <Button btnHandler={cartContext.toggleCartDisplayHandler} size="large" color="dark">
-        <div class={styles.cart__wrapper}>
+      <Button btnHandler={toggleCartDisplay} size="large" color="dark">
+        <div className={styles.cart__wrapper}>
           <svg
             className={styles.icon}
             aria-hidden="true"
@@ -28,7 +33,7 @@ const CartBtn = () => {
           <div className={styles["cart__count"]}>{cartPopulation}</div>
         </div>
       </Button>
-      {cartContext.foodData.cartDisplay && <CartList />}
+      {cartToggle && <CartList toggleCartDisplay={toggleCartDisplay} />}
     </>
   );
 };

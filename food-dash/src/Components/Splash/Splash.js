@@ -3,9 +3,9 @@ import splash_img from "../images/buffet.jpeg";
 
 const Splash = () => {
   return (
-    <div class={styles.splash}>
-      <img src={splash_img} class={styles["splash__background"]}></img>
-      <div class={styles["splash__content"]}>
+    <div className={styles.splash}>
+      <img src={splash_img} alt="background" className={styles["splash__background"]}></img>
+      <div className={styles["splash__content"]}>
         <h2>Delicious Food, Delivered To You</h2>
         <p>
           Choose our favourite meal from our broad selection of available meals and enjoy a

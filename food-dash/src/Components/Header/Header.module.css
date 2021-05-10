@@ -10,8 +10,12 @@
 .header > *:first-child {
   margin-left: 2rem;
 }
-.header > *:last-child {
+.header button {
   margin-right: 2rem;
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
+}
+
+.header div {
+  justify-self: center;
 }

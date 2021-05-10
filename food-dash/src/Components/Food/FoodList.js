@@ -9,7 +9,7 @@ const FoodList = () => {
   return (
     <Food>
       {cartContext.foodData.menu.map((ele) => (
-        <FoodItem itemInfo={ele} />
+        <FoodItem key={Math.random()} itemInfo={ele} />
       ))}
     </Food>
   );

@@ -9,5 +9,5 @@
   list-style-type: none;
   width: 80%;
   max-width: 75rem;
-  align-self: center;
+  margin: 0 auto;
 }

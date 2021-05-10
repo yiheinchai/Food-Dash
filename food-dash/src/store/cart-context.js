@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 
 const CartContext = React.createContext({
   menu: [],
@@ -9,7 +9,7 @@ function foodReducer(state, action) {
     const findExisting = state.cartItems.find((ele) => ele.name === action.item.name);
     if (findExisting) {
       const newCart = state.cartItems.map((ele) => {
-        if (ele.name != action.item.name) return ele;
+        if (ele.name !== action.item.name) return ele;
         return { ...ele, amount: ele.amount + action.item.amount };
       });
       return { ...state, cartItems: newCart };
@@ -21,12 +21,12 @@ function foodReducer(state, action) {
     if (findExisting.amount <= 1) {
       return {
         ...state,
-        cartItems: [...state.cartItems.filter((ele) => ele.name != action.item.name)],
+        cartItems: [...state.cartItems.filter((ele) => ele.name !== action.item.name)],
       };
     }
     if (findExisting.amount > 1) {
       const newCart = state.cartItems.map((ele) => {
-        if (ele.name != action.item.name) return ele;
+        if (ele.name !== action.item.name) return ele;
         return { ...ele, amount: ele.amount - 1 };
       });
       return { ...state, cartItems: newCart };
@@ -36,7 +36,7 @@ function foodReducer(state, action) {
   //   if (action.type === "DELETE_FOOD") {
   //     return {
   //       ...state,
-  //       cartItems: [...state.cartItems.filter((ele) => ele.name != action.item.name)],
+  //       cartItems: [...state.cartItems.filter((ele) => ele.name !== action.item.name)],
   //     };
   //   }
 
@@ -76,16 +76,13 @@ export const CartContextProvider = (props) => {
 
   const addtoCartHandler = (item) => {
     dispatchFood({ type: "ADD_FOOD", item });
-    console.log(foodData);
   };
 
   const modifyAmountHandler = (item) => {
     dispatchFood({ type: "MODIFY_AMOUNT", item });
-    console.log(foodData.menu);
   };
 
   const toggleCartDisplayHandler = () => {
-    console.log(foodData);
     dispatchFood({ type: "TOGGLE_CART" });
   };
 

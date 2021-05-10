@@ -1,11 +1,3 @@
-.cart__price {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.cart__controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
+.cartwrapper {
+  display: grid;
 }

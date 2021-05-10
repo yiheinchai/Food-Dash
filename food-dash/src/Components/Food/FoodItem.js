@@ -19,6 +19,7 @@ const FoodItem = (props) => {
           <h4>Amount</h4>{" "}
           <Input
             itemInfo={props.itemInfo}
+            type="number"
             modifyAmount={cartContext.modifyAmountHandler}
             amount={props.itemInfo.amount}
           />
