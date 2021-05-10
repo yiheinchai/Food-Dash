@@ -16,13 +16,29 @@ function foodReducer(state, action) {
     }
     return { ...state, cartItems: [...state.cartItems, action.item] };
   }
-
   if (action.type === "DELETE_FOOD") {
-    return {
-      ...state,
-      cartItems: [...state.cartItems.filter((ele) => ele.name != action.item.name)],
-    };
+    const findExisting = state.cartItems.find((ele) => ele.name === action.item.name);
+    if (findExisting.amount <= 1) {
+      return {
+        ...state,
+        cartItems: [...state.cartItems.filter((ele) => ele.name != action.item.name)],
+      };
+    }
+    if (findExisting.amount > 1) {
+      const newCart = state.cartItems.map((ele) => {
+        if (ele.name != action.item.name) return ele;
+        return { ...ele, amount: ele.amount - 1 };
+      });
+      return { ...state, cartItems: newCart };
+    }
   }
+
+  //   if (action.type === "DELETE_FOOD") {
+  //     return {
+  //       ...state,
+  //       cartItems: [...state.cartItems.filter((ele) => ele.name != action.item.name)],
+  //     };
+  //   }
 
   if (action.type === "MODIFY_AMOUNT") {
     return {
@@ -31,6 +47,13 @@ function foodReducer(state, action) {
         if (ele.name === action.item.name) return action.item;
         return ele;
       }),
+    };
+  }
+
+  if (action.type === "TOGGLE_CART") {
+    return {
+      ...state,
+      cartDisplay: !state.cartDisplay,
     };
   }
 }
@@ -44,6 +67,7 @@ export const CartContextProvider = (props) => {
       { name: "Barbecue Burger", description: "American, raw, meaty", price: "$12.99", amount: 1 },
       { name: "Green Bowl", description: "Healthy...and green...", price: "$18.99", amount: 1 },
     ],
+    cartDisplay: false,
   });
 
   const deletefromCartHandler = (item) => {
@@ -60,9 +84,20 @@ export const CartContextProvider = (props) => {
     console.log(foodData.menu);
   };
 
+  const toggleCartDisplayHandler = () => {
+    console.log(foodData);
+    dispatchFood({ type: "TOGGLE_CART" });
+  };
+
   return (
     <CartContext.Provider
-      value={{ foodData, addtoCartHandler, deletefromCartHandler, modifyAmountHandler }}
+      value={{
+        foodData,
+        addtoCartHandler,
+        deletefromCartHandler,
+        modifyAmountHandler,
+        toggleCartDisplayHandler,
+      }}
     >
       {props.children}
     </CartContext.Provider>
