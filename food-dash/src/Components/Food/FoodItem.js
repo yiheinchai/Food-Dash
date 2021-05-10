@@ -2,10 +2,11 @@ import Price from "./Price";
 import styles from "./FoodItem.module.css";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../../store/cart-context";
 
 const FoodItem = (props) => {
+  const [orderAmount, setOrderAmount] = useState(1);
   const cartContext = useContext(CartContext);
   return (
     <li className={styles["food__item"]}>
@@ -20,11 +21,16 @@ const FoodItem = (props) => {
           <Input
             itemInfo={props.itemInfo}
             type="number"
-            modifyAmount={cartContext.modifyAmountHandler}
-            amount={props.itemInfo.amount}
+            modifyAmount={setOrderAmount}
+            amount={orderAmount}
           />
         </div>
-        <Button itemInfo={props.itemInfo} btnHandler={cartContext.addtoCartHandler} color="light">
+        <Button
+          itemInfo={props.itemInfo}
+          orderAmount={orderAmount}
+          btnHandler={cartContext.addtoCartHandler}
+          color="light"
+        >
           + Add
         </Button>
       </form>
