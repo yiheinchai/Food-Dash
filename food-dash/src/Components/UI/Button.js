@@ -3,7 +3,10 @@ import styles from "./Button.module.css";
 const Button = (props) => {
   function onClickHandler(event) {
     event.preventDefault();
-    props.btnHandler(props.itemInfo);
+    props.btnHandler({
+      ...props.itemInfo,
+      amount: +props.orderAmount,
+    });
   }
   return (
     <button

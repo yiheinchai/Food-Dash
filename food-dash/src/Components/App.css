@@ -9,6 +9,17 @@ html {
   color: white;
 }
 
+@media (max-width: 700px) {
+  html {
+    font-size: 55.5%;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 41.5%;
+  }
+}
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;

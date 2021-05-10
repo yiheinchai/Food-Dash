@@ -2,10 +2,7 @@ import styles from "./Input.module.css";
 
 const Input = (props) => {
   const onInputChangeHandler = (event) => {
-    props.modifyAmount({
-      ...props.itemInfo,
-      amount: +event.target.value,
-    });
+    props.modifyAmount(event.target.value < 0 ? 1 : event.target.value);
   };
 
   return (

@@ -40,16 +40,6 @@ function foodReducer(state, action) {
   //     };
   //   }
 
-  if (action.type === "MODIFY_AMOUNT") {
-    return {
-      ...state,
-      menu: state.menu.map((ele) => {
-        if (ele.name === action.item.name) return action.item;
-        return ele;
-      }),
-    };
-  }
-
   if (action.type === "TOGGLE_CART") {
     return {
       ...state,
@@ -78,10 +68,6 @@ export const CartContextProvider = (props) => {
     dispatchFood({ type: "ADD_FOOD", item });
   };
 
-  const modifyAmountHandler = (item) => {
-    dispatchFood({ type: "MODIFY_AMOUNT", item });
-  };
-
   const toggleCartDisplayHandler = () => {
     dispatchFood({ type: "TOGGLE_CART" });
   };
@@ -92,7 +78,6 @@ export const CartContextProvider = (props) => {
         foodData,
         addtoCartHandler,
         deletefromCartHandler,
-        modifyAmountHandler,
         toggleCartDisplayHandler,
       }}
     >
